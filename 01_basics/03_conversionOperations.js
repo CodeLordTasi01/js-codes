@@ -72,13 +72,21 @@
 
 // **************** Operations *****************
 
-let value = 3
-let negValue = -value
+// let value = 3
+// let negValue = -value
 // console.log(negValue);
 
 
 
+// console.log("2" + 2);
+// console.log(2 + 2);
+// console.log(1 + 2 + "3");
+// console.log(2 + "5" + 6);
+// console.log("1" + 2 + 5);
 
 
-console.log("2" + 2);
-console.log(2 + 2);
+
+// let str1="Tasleem "
+// let str2="Shah"
+// let str3=str1 + str2 
+// console.log(str3);
