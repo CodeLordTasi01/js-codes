@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Corrected viewport meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Events</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <h2>Amazing Images</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img width="200px" id="photoshop" src="image.jpg" alt="photoshop" />
+        </li>
+        <li>
+          <img width="200px" id="japan" src="IMG_5600 (2).jpg" alt="" />
+        </li>
+        <li>
+          <img width="200px" id="river" src="IMG_5600.jpg" alt="" />
+        </li>
+        <li>
+          <img width="200px" id="owl" src="Tasii JPG.jpg" alt="" />
+        </li>
+        <li>
+          <a style="color: #fff" href="https://google.com" id="google">Google</a>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      // --------------------------
+      // Example of onclick
+      // --------------------------
+      // document.getElementById('owl').onclick = function(){
+      //     alert("owl clicked")
+      // }
+
+      // --------------------------
+      // addEventListener examples
+      // --------------------------
+      // document.getElementById('owl').addEventListener('click', function(e) {
+      //     alert('owl clicked again')
+      // }, false)
+
+      // document.getElementById("images").addEventListener(
+      //   "click",
+      //   function (e) {
+      //     alert("clicked inside the ul");
+      //   },
+      //   false
+      // );
+
+      // document.getElementById("owl").addEventListener(
+      //   "click",
+      //   function (e) {
+      //     alert("owl clicked");
+      //     e.stopPropagation(); // stop event bubbling
+      //   },
+      //   false
+      // );
+
+      // document.getElementById("google").addEventListener(
+      //   "click",
+      //   function (e) {
+      //     e.preventDefault(); // prevent default action
+      //     e.stopPropagation(); // stop bubbling
+      //     console.log("google clicked");
+      //   },
+      //   false
+      // );
+
+      // --------------------------
+      // Remove clicked image's parent <li>
+      // --------------------------
+      document.querySelector("#images").addEventListener(
+        "click",
+        function (e) {
+          console.log(e.target.tagName); // log tag name
+          
+          // Only remove if an <img> is clicked
+          if(e.target.tagName === 'IMG'){
+            console.log(e.target.id); // log image id
+            let removeIt = e.target.parentNode; // get <li>
+            removeIt.remove(); // remove <li>
+          }
+          
+          // Alternative method:
+          // removeIt.parentNode.removeChild(removeIt);
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
